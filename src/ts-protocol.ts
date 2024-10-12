@@ -121,12 +121,14 @@ export enum ModuleKind {
     System = 'System',
     ES6 = 'ES6',
     ES2015 = 'ES2015',
-    ESNext = 'ESNext'
+    ESNext = 'ESNext',
+    NodeNext = 'NodeNext'
 }
 
 export enum ModuleResolutionKind {
     Classic = 'Classic',
     Node = 'Node',
+    NodeNext = 'NodeNext'
     // Bundler = 'Bundler'
 }
 

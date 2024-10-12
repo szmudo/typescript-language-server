@@ -13,7 +13,7 @@ import path from 'node:path';
 import deepmerge from 'deepmerge';
 import type lsp from 'vscode-languageserver';
 import { URI } from 'vscode-uri';
-import { CommandTypes, ModuleKind, ScriptTarget, type ts, type TypeScriptInitializationOptions } from '../ts-protocol.js';
+import { CommandTypes, ModuleKind, ModuleResolutionKind, ScriptTarget, type ts, type TypeScriptInitializationOptions } from '../ts-protocol.js';
 import { ITypeScriptServiceClient } from '../typescriptService.js';
 import { isTypeScriptDocument } from '../configuration/languageIds.js';
 import { LspDocument } from '../document.js';
@@ -69,6 +69,7 @@ const DEFAULT_IMPLICIT_PROJECT_CONFIGURATION: Required<WorkspaceConfigurationImp
     checkJs: false,
     experimentalDecorators: false,
     module: ModuleKind.ESNext,
+    moduleResolution: ModuleResolutionKind.Node,
     strictFunctionTypes: true,
     strictNullChecks: true,
     target: ScriptTarget.ES2020,
@@ -102,6 +103,7 @@ export interface WorkspaceConfigurationImplicitProjectConfigurationOptions {
     checkJs?: boolean;
     experimentalDecorators?: boolean;
     module?: string;
+    moduleResolution?: string;
     strictFunctionTypes?: boolean;
     strictNullChecks?: boolean;
     target?: string;

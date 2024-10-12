@@ -50,6 +50,10 @@ export function getInferredProjectCompilerOptions(
         projectConfig.module = workspaceConfig.module as ts.server.protocol.ModuleKind;
     }
 
+    if (workspaceConfig.moduleResolution) {
+        projectConfig.moduleResolution = workspaceConfig.moduleResolution as ts.server.protocol.ModuleResolutionKind;
+    }
+
     if (workspaceConfig.target) {
         projectConfig.target = workspaceConfig.target as ts.server.protocol.ScriptTarget;
     }
