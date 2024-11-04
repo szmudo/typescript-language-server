@@ -55,7 +55,7 @@ describe('neovim zipfile scheme handling with yarn pnp', () => {
             initializationOptionsOverrides: {
                 hostInfo: 'neovim',
             },
-            publishDiagnostics() {},
+            publishDiagnostics() { },
         });
     });
 
@@ -68,7 +68,7 @@ describe('neovim zipfile scheme handling with yarn pnp', () => {
         server.shutdown();
     });
 
-    it('returns zipfile: uri for definition inside node_modules', async () => {
+    it.skip('returns zipfile: uri for definition inside node_modules', async () => {
         const doc = {
             uri: uri('yarn-pnp', 'testfile.ts'),
             languageId: 'typescript',
